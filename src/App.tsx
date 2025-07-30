@@ -10,6 +10,8 @@ import Register from "./pages/Register";
 import RootLayout from "./layouts/RootLayout";
 import HomeLayout from "./layouts/HomeLayout";
 import RequireAuth from "./components/RequireAuth";
+import TaskSection from "./components/TaskSection";
+import Spins from "./components/Spins";
 
 function App() {
   const router = createBrowserRouter(
@@ -25,7 +27,11 @@ function App() {
               <HomeLayout />
             </RequireAuth>
           }
-        />
+        >
+          <Route path="tasklist" element={<TaskSection/>} />
+          <Route path="spins" element={<Spins/>} />
+
+        </Route>
       </Route>
     )
   );
