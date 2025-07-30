@@ -25,6 +25,7 @@ const Login=()=> {
 
   return (
     <>
+
       <button onClick={() => navigate('/register')}>Register</button>
 
       <form onSubmit={handleSubmit}>
