@@ -1,16 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateTask from "./CreateTask";
 import TaskGrid from "./TaskGrid";
 import TaskCard from "./TaskCard";
-import { useAppSelector } from "../types/interfaces";
+import { useAppDispatch, useAppSelector } from "../types/interfaces";
+import { fetchTodos } from "../features/todo/todoSlice";
 
 const TaskSection = () => {
   const [addVisibility, setAddVisibility] = useState(false);
-
+  const dispatch = useAppDispatch();
   const todos = useAppSelector((s) => s.todos);
-
   const toggleNewTaskForm = () => setAddVisibility(!addVisibility);
+
+   useEffect(() => {
+    dispatch(fetchTodos());
+  }, [dispatch]);
+
 
   return (
     <div className="relative z-10 w-full max-w-6xl mx-auto rounded-2xl bg-white shadow-xl p-4 sm:p-6 md:p-8 -mt-4 sm:-mt-6 md:-mt-10 flex flex-col">
