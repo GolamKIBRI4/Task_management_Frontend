@@ -1,23 +1,24 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-
-import Login from './pages/Login'
-import Register from './pages/Register'
-import RootLayout from './layouts/RootLayout'
-import HomeLayout from './layouts/HomeLayout'
-import RequireAuth from './components/RequireAuth'
-
-
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import RootLayout from "./layouts/RootLayout";
+import HomeLayout from "./layouts/HomeLayout";
+import RequireAuth from "./components/RequireAuth";
 
 function App() {
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-        <Route index element={<Login/>} />
+        <Route index element={<Login />} />
         <Route path="register" element={<Register />} />
 
-                <Route
+        <Route
           path="todos"
           element={
             <RequireAuth>
@@ -26,16 +27,14 @@ function App() {
           }
         />
       </Route>
-    ) 
-  )
- 
+    )
+  );
 
   return (
-   
     <>
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
