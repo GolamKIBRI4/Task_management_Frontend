@@ -11,7 +11,8 @@ import RootLayout from "./layouts/RootLayout";
 import HomeLayout from "./layouts/HomeLayout";
 import RequireAuth from "./components/RequireAuth";
 import TaskSection from "./components/TaskSection";
-import Spins from "./components/Spins";
+
+import SpinSection from "./components/SpinSection";
 
 function App() {
   const router = createBrowserRouter(
@@ -29,7 +30,7 @@ function App() {
           }
         >
           <Route path="tasklist" element={<TaskSection/>} />
-          <Route path="spins" element={<Spins/>} />
+          <Route path="spins" element={<SpinSection/>} />
 
         </Route>
       </Route>

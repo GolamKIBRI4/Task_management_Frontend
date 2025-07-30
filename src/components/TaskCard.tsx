@@ -1,8 +1,11 @@
 import React from 'react'
+interface Props{
+    children: React.ReactNode;  
+}
 
-const TaskCard = () => {
+const TaskCard = ({children}:Props) => {
   return (
-    <div>TaskCard</div>
+    <div>{children}</div>
   )
 }
 
