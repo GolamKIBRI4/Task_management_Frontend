@@ -64,9 +64,13 @@ const todoSlice = createSlice({
           state[index] = action.payload;
         }
       })
-      .addCase(deleteTodoAsync.fulfilled, (state, action) =>
-        state.filter(t => String(t.id) !== String(action.payload))
-      );
+.addCase(deleteTodoAsync.fulfilled, (state, action) => {
+  const index = state.findIndex(t => String(t.id) === String(action.payload));
+  if (index !== -1) {
+    state.splice(index, 1); 
+  }
+});
+
   },
 });
 
