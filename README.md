@@ -1,3 +1,35 @@
+## Installation Workflow
+
+We are using **Vite + React + TypeScript** for this project. To install project in local server,
+
+Note: You need to have access of the project over **github**
+
+First clone the repo,
+
+    git clone https://github.com/GolamKIBRI4/Task_management_Frontend.git
+
+Install all dependency using,
+
+    yarn install
+
+If you use npm use,
+
+    npm install
+
+
+The application uses a custom backend API for jwt authentication and data management.
+
+then, to run the server locally use,
+
+    yarn dev
+
+    or
+
+    npm run dev
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
