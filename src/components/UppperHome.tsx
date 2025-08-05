@@ -17,7 +17,7 @@ const UppperHome = () => {
         </div>
         <div className="flex gap-4 items-center">
           <Link
-            to="tasklist"
+            to="/todos/"
             className={`text-[${
               selectedSec === "tasklist" ? "#60E5AE" : "#fff"
             }]`}

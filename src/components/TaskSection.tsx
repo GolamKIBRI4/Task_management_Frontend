@@ -53,12 +53,12 @@ const TaskSection = () => {
         </div>
       )}
 
-      {/* ✅ CONDITIONAL RENDERING */}
+
       {!isViewingTask ? (
-        // Render the task grid if not viewing task
+        
         <TaskGrid>
           {todos.map((todo: any) => (
-            <Link to={`/todos/tasklist/${todo.id}`} key={todo.id}>
+            <Link to={`/todos/${todo.id}`} key={todo.id}>
               <TaskCard>
                 <div className="flex flex-col gap-2 h-full">
                   <div className="flex items-center gap-2">
@@ -102,7 +102,7 @@ const TaskSection = () => {
           ))}
         </TaskGrid>
       ) : (
-        // ✅ This fills entire area when viewing task detail
+        
         <div className="flex-1 w-full h-full mt-4 sm:mt-6 md:mt-8">
           <Outlet />
         </div>

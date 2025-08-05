@@ -30,11 +30,12 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route path="tasklist" element={<TaskSection />}>
-            {/* Nested route for task details */}
-            <Route path=":id" element={<TaskDetails />} loader={taskDetailsLoader} errorElement={<div>Task not found!</div>} />
-            
-          </Route>
+          {/* Make TaskSection the default element for the /todos route */}
+          <Route index element={<TaskSection />} />
+          
+          {/* Nested route for task details */}
+          <Route path=":id" element={<TaskDetails />} loader={taskDetailsLoader} errorElement={<div>Task not found!</div>} />
+          
           <Route path="spins" element={<SpinSection />} />
         </Route>
       </Route>
@@ -42,9 +43,7 @@ function App() {
   );
 
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <RouterProvider router={router} />
   );
 }
 

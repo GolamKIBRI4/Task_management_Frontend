@@ -128,7 +128,7 @@ const TaskDetails = () => {
               className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
               onClick={() => {
                 dispatch(deleteTodoAsync(String(todo.id)));
-                navigate("/todos/tasklist");
+                navigate("/todos/");
               }}
             >
               ✕
@@ -146,7 +146,7 @@ const TaskDetails = () => {
             <button
               onClick={() => {
                 dispatch(deleteTodoAsync(String(todo.id)));
-                navigate("/todos/tasklist");
+                navigate("/todos/");
               }}
               className="bg-[#60E5AE] hover:bg-[#4cbf8d] text-white font-semibold px-6 py-2 rounded-lg"
             >
@@ -170,7 +170,7 @@ const TaskDetails = () => {
               <button
                 onClick={() => {
                   dispatch(deleteTodoAsync(String(todo.id)));
-                  navigate("/todos/tasklist");
+                  navigate("/todos/");
                 }}
                 className="bg-[#60E5AE] hover:bg-[#4cbf8d] text-white font-semibold px-6 py-2 rounded-lg"
               >
