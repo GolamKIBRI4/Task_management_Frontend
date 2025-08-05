@@ -68,7 +68,7 @@ const Spins: React.FC = () => {
   };
 
   const handleGoToTask = () => {
-      navigate('/todos/tasklist');
+      navigate('/todos/');
     
   };
 
